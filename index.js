@@ -38,7 +38,7 @@ bot.command("find_partner", (ctx) => {
     return;
   }
 
-  partnerId = lookingUsers.find((u) => u.username === partnerUsername).id ?? null;
+  let partnerId = lookingUsers.find((u) => u.username === partnerUsername).id;
   // Send message to both users with each other's username
   ctx.reply(
     `You have been matched with ${partnerUsername}. Start chatting now!`
