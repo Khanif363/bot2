@@ -38,11 +38,11 @@ bot.command("find_partner", (ctx) => {
     return;
   }
 
+  partnerId = lookingUsers.find((u) => u.username === partnerUsername).id ?? null;
   // Send message to both users with each other's username
   ctx.reply(
     `You have been matched with ${partnerUsername}. Start chatting now!`
   );
-  partnerId = lookingUsers.find((u) => u.username === partnerUsername).id;
   ctx.telegram.sendMessage(
     partnerId,
     `You have been matched with ${ctx.from.username}. Start chatting now!`
